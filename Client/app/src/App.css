@@ -1,0 +1,259 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-color: #171717;
+}
+
+/* =================== NavBar ==================    */
+
+.nav{
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  height: 100px;
+  border-radius: 4px;
+
+}
+
+
+
+.logoContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.loginContainer h1 {
+  padding: 0px;
+  margin: 0px;
+  font-weight: 700;
+
+}
+.navContainer{
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 0px;
+}
+.navContainer p {
+  margin: 0;
+}
+
+.navContainer button{
+  border:none;
+  color: rgb(29, 29, 29);
+  padding: 5px 10px;
+  background-color: white;
+  font-weight: 600;
+}
+
+.navContainer a{
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.profileButtonContainer{
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.profileButtonContainer button , .logoutContainer button{
+  display: flex;
+  margin: 20px 0px;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+
+/* =================== SignIn Page & Login  ==================    */
+.siginContainer , .loginContainer{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin-top: 100px;
+}
+.siginContainer h1 {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.signUpBottomContainer , .loginBottomContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 50px;
+}
+
+.signUpBottomContainer p , .loginBottomContainer p {
+  padding: 0;
+  margin: 0;
+}
+
+form button{
+  background-color: blueviolet;
+  color:white;
+  border: none;
+  padding: 5px 0px;
+  border-radius: 4px;
+}
+
+.loginForm , .signUpForm{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 4px;
+
+  gap: 20px;
+}
+
+.signUpBottomContainer a , .loginBottomContainer a{
+  color: blueviolet;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+i{
+  color:#000;
+  font-size: 80px;
+}
+
+.errorText{
+  color:red;
+  background-color: pink;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+
+
+/* =================== Tasks Input Container ================== */
+
+.dashBoardContainer{
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.userTasksContainer{
+  margin-top: 10px;
+  background-color: rgb(18, 18, 18);
+  border-radius: 8px;
+  color:white;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.taskContainer{
+
+  padding: 0;
+
+}
+.task-item p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.task-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-bottom: 1px solid #202020;
+
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.editBtn{
+  background-color: transparent;
+  color: blue;
+  font-size: 20px;
+  border: none;
+}
+.removeBtn{
+  background-color: transparent;
+  color: red;
+  font-size: 20px;
+  border: none;
+}
+
+.taskButtonContainer{
+  display: flex;
+  gap: 20px;
+}
+
+
+.mainDashboard .addTaskBtn {
+  color: white;
+  font-weight: 600;
+  background-color: blueviolet;
+  border: none;
+  font-size: 14px;
+  padding: 10px;
+
+}
+
+.taskContainer form {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(18, 18, 18);
+  padding: 20px;
+  border-radius: 4px;
+  gap: 20px;
+}
+
+
+
+.profileContainer{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  max-width: 600px;
+}
+
+
+.profileContainer button{
+  background-color: red;
+  border:none;
+  color: white;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+.userItemsContainer{
+  color: white;
+}
+
+.userItemsContainer{
+  background-color: rgb(18, 18, 18);
+  max-width: 600px;
+  border-radius: 4px;
+
+}
+
+.userItemsContainer p {
+  font-weight: 600;
+  text-align: start;
+}
