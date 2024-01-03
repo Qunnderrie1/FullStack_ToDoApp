@@ -44,7 +44,7 @@ app.use((err, req, res, next) => {
 
 
 app.get("*" , (req, res) => {
-    res.sendFile(path.join(__dirname , 'Client' , 'index.html'))
+    res.sendFile(path.join(__dirname , 'Client', 'dist' , 'index.html'))
 
 
 })
