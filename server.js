@@ -25,7 +25,6 @@ app.use("/api/user" , userRoute)
 
 
 
-const __dirname = path.resolve();
 
 
 app.use((err, req, res, next) => {
