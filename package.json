@@ -4,18 +4,20 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev" : "nodemon server.js",
-    "start" : "node server.js",
-    "client" : "npm start --prefix client",
-    "clientinstall" : "npm install --prefix client",
-    "render-postbuild" : "NPM_CONFIG_PRODUCTION-false npm install --prefix client && npm run build --prefix client",
-    "build" : "npm i"
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "dev" : "concurrentll \" npm run server \" \" npm run client \" ",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "render-postbuild": "NPM_CONFIG_PRODUCTION-false npm install --prefix client && npm run build --prefix client",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrency": "^0.1.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
