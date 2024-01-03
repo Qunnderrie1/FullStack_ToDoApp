@@ -19,14 +19,14 @@ function App() {
 
 
       <Routes>
-        <Route path='/FullStack_ToDoApp/' element={<Login />} />
-        <Route path='/FullStack_ToDoApp/signup' element={<SignUp />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
 
         {/* Private Route for only user that are logged in. */}
         <Route element={<PrivateRoute />} >
-        <Route path='/FullStack_ToDoApp/dashboard' element={<Dashboard />} />
-        <Route path='/FullStack_ToDoApp/profile' element={<Profile />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/profile' element={<Profile />} />
         </Route>
 
       </Routes>

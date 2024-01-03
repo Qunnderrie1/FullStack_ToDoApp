@@ -36,11 +36,11 @@ const Login = () => {
       // User login information will be excuted with the code below
       try {
         axios
-         .post('https://backend-todoapp-wexe.onrender.com/api/user/login', { email, password })
+         .post('/api/user/login', { email, password })
           .then((res) => {
             if (res.data) {
               dispatch(signInSuccess(res.data));
-              navigate("/FullStack_ToDoApp/dashboard");
+              navigate("/dashboard");
             }
           })
           .catch(() => {
@@ -87,7 +87,7 @@ const Login = () => {
       </form>
       <div className="loginBottomContainer">
         <p>Don't have an account?</p>
-        <Link to="/FullStack_ToDoApp/signup">Sign Up</Link>
+        <Link to="/signup">Sign Up</Link>
       </div>
     </div>
   );

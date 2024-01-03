@@ -17,11 +17,11 @@ const Navbar = () => {
     
     try {
       axios
-        .post(`https://backend-todoapp-wexe.onrender.com/api/user/logout`)
+        .post(`/api/user/logout`)
         .then(() => console.log("User have been logout"))
         .catch((err) => console.log(err));
       dispatch(signOut());
-      navigate("/FullStack_ToDoApp/")
+      navigate("/")
     } catch (error) {
       console.log(error);
     }
@@ -33,8 +33,8 @@ const Navbar = () => {
         <nav className={currentUser ? "nav container" : "nav active"}>
           <div className="navContainer">
     
-            <Link to="/FullStack_ToDoApp/dashboard">Dashboard</Link>
-            <Link to="/FullStack_ToDoApp/profile">Profile</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/profile">Profile</Link>
             <div className="logoutContainer">
               <button onClick={handleLogout}>Logout</button>
             </div>

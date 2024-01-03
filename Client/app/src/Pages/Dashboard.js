@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     // Get tasks
     axios
-      .get(`https://backend-todoapp-wexe.onrender.com/api/task`)
+      .get(`/api/task`)
       .then((res) => dispatch(getUserTasks(res.data)))
       .catch((err) => console.log(err));
 
@@ -50,7 +50,7 @@ const Dashboard = () => {
   const handleAddTask = () => {
 
     if (userTask) {
-      axios.post(`https://backend-todoapp-wexe.onrender.com/api/task`, { userTask })
+      axios.post(`/api/task`, { userTask })
         .then(() => console.log("added task"))
         .catch((err) => console.log(err));
       setUserTask("");
@@ -65,7 +65,7 @@ const Dashboard = () => {
 
 
     axios
-      .delete(`"https://backend-todoapp-wexe.onrender.com/api/task/${id}`)
+      .delete(`"/api/task/${id}`)
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
 

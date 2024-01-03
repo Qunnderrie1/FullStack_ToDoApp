@@ -36,7 +36,7 @@ const SignUp = () => {
         try {
 
 
-           const res = await axios.post('https://backend-todoapp-wexe.onrender.com/api/user/signup',
+           const res = await axios.post('/api/user/signup',
                 {
                    username: username,
                     email: email,
@@ -45,7 +45,7 @@ const SignUp = () => {
                 .then((res) => console.log(res.data) )
                 .catch((err) => console.log(err) )
     
-                navigate('/FullStack_ToDoApp/')
+                navigate('/')
   
         } catch (error) {
 
@@ -68,7 +68,7 @@ const SignUp = () => {
         </form>
         <div className='signUpBottomContainer'>
             <p>Back to</p>
-           <Link to='/FullStack_ToDoApp/'>Login</Link>
+           <Link to='/'>Login</Link>
         </div>
 
     </div>

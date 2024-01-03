@@ -26,7 +26,7 @@ const Profile = () => {
 
         try {
 
-          axios.delete(`https://backend-todoapp-wexe.onrender.com/api/user`)
+          axios.delete(`/api/user`)
           .then(() => console.log("user account deleted"))
           .catch((err) => console.log(err))
           dispatch(profileDelete())

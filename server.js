@@ -12,12 +12,7 @@ const path = require("path");
 
 const app = express();
 
-app.use(cors({
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    origin:"http://qunnderrie1.github.io",
-    
-}))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(cookieParser())
