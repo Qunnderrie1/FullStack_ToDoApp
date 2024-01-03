@@ -6,8 +6,8 @@
   "scripts": {
     "server": "nodemon server.js",
     "start": "node server.js",
-    "dev": "concurrently \" npm run server \" \" npm run Client \" ",
-    "client": "npm start --prefix Client",
+    "dev": "concurrently \" npm run server\" \"npm run client\" ",
+    "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix Client",
     "render-postbuild": "npm install --prefix Client && npm run build --prefix Client",
     "build": "npm i"
@@ -17,7 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "concurrency": "^0.1.4",
     "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
