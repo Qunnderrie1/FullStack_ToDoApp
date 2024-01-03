@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon server.js",
     "start": "node server.js",
-    "dev" : "concurrentll \" npm run server \" \" npm run Client \" ",
+    "dev" : "concurrently \" npm run server \" \" npm run Client \" ",
     "client": "npm start --prefix Client",
     "clientinstall": "npm install --prefix Client",
     "render-postbuild": "npm install --prefix Client && npm run build --prefix Client",
