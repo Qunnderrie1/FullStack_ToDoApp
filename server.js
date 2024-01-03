@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'Client/dist')))
+app.use(express.static(path.join(__dirname, 'app/dist')))
 
 connectDB();
 
@@ -44,7 +44,7 @@ app.use((err, req, res, next) => {
 
 
 app.get("*" , (req, res) => {
-    res.sendFile(path.join(__dirname , 'Client', 'dist' , 'index.html'))
+    res.sendFile(path.join(__dirname , 'app', 'dist' , 'index.html'))
 
 
 })
