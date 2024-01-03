@@ -6,10 +6,10 @@
   "scripts": {
     "server": "nodemon server.js",
     "start": "node server.js",
-    "dev" : "concurrentll \" npm run server \" \" npm run client \" ",
-    "client": "npm start --prefix client",
-    "clientinstall": "npm install --prefix client",
-    "render-postbuild": "npm install --prefix client && npm run build --prefix client",
+    "dev" : "concurrentll \" npm run server \" \" npm run Client \" ",
+    "client": "npm start --prefix Client",
+    "clientinstall": "npm install --prefix Client",
+    "render-postbuild": "npm install --prefix Client && npm run build --prefix Client",
     "build": "npm i"
   },
   "keywords": [],
