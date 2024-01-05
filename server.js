@@ -43,15 +43,22 @@ app.use((err, req, res, next) => {
 
 })
 
+if(process.env.NODE_ENV === 'production'){
+    const __dirname = path.resolve();
 
-app.get("*" , (req, res) => {
-    res.sendFile(path.join(__dirname , 'Client', 'build' , 'index.html'))
+    app.use(express.static(path.join(__dirname + 'Client/build')));
 
+    app.get("*" , (req, res) => res.sendFile(path.resolve(__dirname + '/Client'+ '/build'+ '/index.html')))
+    console.log('Server is ready production!')
 
-})
+}else{
 
+    app.get('/' , (req, res) => res.send('Server is running!'))
+    console.log('Server is ready development!')
+}
 
 
 app.listen(process.env.PORT , () => {
     console.log(`Server is running on port ${process.env.PORT}`)
 })
+

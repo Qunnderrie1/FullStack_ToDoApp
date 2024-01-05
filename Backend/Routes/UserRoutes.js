@@ -24,7 +24,6 @@ router.post("/login" , async (req, res, next) => {
        const token = generateToken(current._id)
        res.cookie('token' , token, {
        httpOnly: false,
-       domain: "http://qunnderrie1.github.oi",
        secure: true,
        sameSite: 'none',
        maxAge: 1000 * 60 * 60 * 24
