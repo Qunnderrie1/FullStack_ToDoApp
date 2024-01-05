@@ -65,7 +65,7 @@ const Dashboard = () => {
 
 
     axios
-      .delete("/api/task/${id}")
+      .delete(`/api/task/${id}`)
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
 
