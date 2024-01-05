@@ -74,9 +74,11 @@ const Dashboard = () => {
 
   return (
     <div className="mainDashboard container">
+      <div className="box1"></div>
       <div className="dashBoardContainer">
         <div className="taskContainer container">
-
+        <h1 className="headerText">Task <span>List</span></h1>
+        <UserItems />
           <div className="usertaskHeaderContainer">
 
           <div className="profileButtonContainer">
@@ -88,7 +90,7 @@ const Dashboard = () => {
                 <p>User</p>
               )}
             </div>
-          <UserItems />
+       
           </div>
        
           <form onSubmit={handleSubmit}>

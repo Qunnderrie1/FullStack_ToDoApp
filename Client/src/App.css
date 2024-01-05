@@ -1,12 +1,13 @@
 .App {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-
+  position: relative;
 }
 
 body{
 
   color: black;
+
 }
 
 /* =================== NavBar ==================    */
@@ -64,6 +65,16 @@ body{
 .navMain{
   background-color: rgb(0, 88, 189);
   padding: 20px;
+}
+
+.headerText{
+  text-align: start;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+span{
+  font-weight: lighter;
 }
 
 
@@ -279,11 +290,11 @@ i{
 }
 
 .userItemsContainer p {
-  font-weight: 400;
+
   font-size: 14px;
   width: fit-content;
-  margin: 20px auto;
-  text-align: center;
+  text-align: start;
+  color: grey;
 
 }
 
