@@ -123,7 +123,7 @@ const Dashboard = () => {
               );
             })
           ) : (
-            <p style={{ textAlign: "center", margin: "20px 0px" }}>No Tasks</p>
+            <p style={{ textAlign: "center", margin: "20px 0px", fontStyle:"italic" }}>No Tasks</p>
           )}
         </div>
       </div>

@@ -2,11 +2,11 @@ import React, { Children, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { signInSuccess, signInFailure } from "../features/userSlice";
+import { signInSuccess, signInFailure, signInStart } from "../features/userSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Loader from "../Component/Loader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ const Login = () => {
   
   },[])
 
-  const { isError } = useSelector((state) => state.user);
+  const { isError, isLoading } = useSelector((state) => state.user);
 
   const handleLogin = () => {
     // User must input in email and password

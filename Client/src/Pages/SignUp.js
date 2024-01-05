@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate , Link } from 'react-router-dom';
+import { useNavigate , Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { signInStart } from '../features/userSlice';
+
+
 
 const SignUp = () => {
 
@@ -15,6 +19,9 @@ const SignUp = () => {
     const [password,  setPassword ] = useState('')
 
     const navigate = useNavigate();
+
+    const { isError } = useSelector( state => state.user)
+    const dispatch = useDispatch();
 
 
     const handleSubmit = (e) => {
@@ -44,8 +51,10 @@ const SignUp = () => {
                 })
                 .then((res) => console.log(res.data) )
                 .catch((err) => console.log(err) )
-    
+                
+                dispatch(signInStart())
                 navigate('/')
+                
   
         } catch (error) {
 
@@ -59,7 +68,7 @@ const SignUp = () => {
 
     <div className='siginContainer container'>
         <h1>Sign Up</h1>
-        <p>Sign Up to get started</p>
+        <p>Create an account to start creating tasks</p>
         <form className='signUpForm' onSubmit={handleSubmit}>
             <input onChange={(e) => setUserName(e.target.value)} value={username}  className='form-control' placeholder='username' />
             <input onChange={(e) => setEmail(e.target.value)} value={email} className='form-control' type='email' placeholder='email' />
