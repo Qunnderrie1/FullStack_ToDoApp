@@ -64,8 +64,7 @@ const Dashboard = () => {
   const handleDelete = (id) => {
 
 
-    axios
-      .delete(`/api/task/${id}`)
+    axios.delete(`/api/task/${id}`)
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
 
@@ -83,7 +82,7 @@ const Dashboard = () => {
           <div className="profileButtonContainer">
               {currentUser ? (
                 <button onClick={()=> navigate('/profile')}>
-                  Hello, {currentUser.username}
+                  Hello, {currentUser.username.toUpperCase()}
                 </button>
               ) : (
                 <p>User</p>
@@ -124,7 +123,7 @@ const Dashboard = () => {
               );
             })
           ) : (
-            <p style={{ textAlign: "center", margin: "0" }}>No Tasks</p>
+            <p style={{ textAlign: "center", margin: "20px 0px" }}>No Tasks</p>
           )}
         </div>
       </div>

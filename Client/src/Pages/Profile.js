@@ -18,7 +18,7 @@ const Profile = () => {
     <div className='profileContainer container'>
 
       <div>
-        <p style={{ marginTop: "100px", fontSize: "20px", fontWeight: "600"}}>{currentUser.username}</p>
+        <p style={{ marginTop: "100px", fontSize: "20px", fontWeight: "600"}}>{currentUser.username.toUpperCase()}</p>
         <p style={{ margin: "20px 0px", fontSize: "18px", fontWeight: "600"}}>Tasks: {tasks.length}</p>
       </div>
 

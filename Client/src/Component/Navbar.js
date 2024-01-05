@@ -32,7 +32,7 @@ const Navbar = () => {
       {currentUser ? (
         <nav className={currentUser ? "nav container" : "nav active"}>
           <div className="navContainer">
-            <Link to="/dashboard">Dashboard</Link>
+            <Link className="active" to="/dashboard">Dashboard</Link>
             <Link to="/profile">Profile</Link>
             <div className="logoutContainer">
               <button onClick={handleLogout}>Logout</button>

@@ -8,7 +8,7 @@ const UserItems = () => {
     <div className="userItemsContainer container">
       <div>
         {
-          tasks.length == 5 ? <p>You have reached your limit.</p> :<p>Task: {tasks.length} / 5</p>
+          tasks.length == 5 ? <p style={{ color : "red", fontSize: "18px"}}>You have reached your limit!</p> :<p>Task: {tasks.length} / 5</p>
         }
 
       </div>
