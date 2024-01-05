@@ -65,7 +65,7 @@ const Dashboard = () => {
 
 
     axios
-      .delete(`"/api/task/${id}`)
+      .delete("/api/task/${id}")
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
 
@@ -77,16 +77,21 @@ const Dashboard = () => {
     <div className="mainDashboard container">
       <div className="dashBoardContainer">
         <div className="taskContainer container">
-        <div className="profileButtonContainer">
+
+          <div className="usertaskHeaderContainer">
+
+          <div className="profileButtonContainer">
               {currentUser ? (
                 <button onClick={()=> navigate('/profile')}>
                   Hello, {currentUser.username}
                 </button>
               ) : (
-                <p></p>
+                <p>User</p>
               )}
             </div>
           <UserItems />
+          </div>
+       
           <form onSubmit={handleSubmit}>
             <input
               onChange={(e) => setUserTask(e.target.value)}

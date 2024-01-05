@@ -65,7 +65,7 @@ router.post("/logout", async (req, res) => {
 });
 
 // Delete user
-router.delete("/", async (req, res) => {
+router.delete("/" , async (req, res) => {
   let token;
 
   token = req.cookies.token;

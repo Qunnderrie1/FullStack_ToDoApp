@@ -28,11 +28,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navMain container">
+    <div className="navMain container-fluid">
       {currentUser ? (
         <nav className={currentUser ? "nav container" : "nav active"}>
           <div className="navContainer">
-    
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/profile">Profile</Link>
             <div className="logoutContainer">
