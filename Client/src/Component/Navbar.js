@@ -4,39 +4,25 @@ import "../App.css";
 import { signOut } from "../features/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+
 
 
   const { currentUser } = useSelector((state) => state.user);
 
-  const handleLogout = () => {
-    
-    try {
-      axios
-        .post(`/api/user/logout`)
-        .then(() => console.log("User have been logout"))
-        .catch((err) => console.log(err));
-      dispatch(signOut());
-      navigate("/")
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div className="navMain container-fluid">
       {currentUser ? (
         <nav className={currentUser ? "nav container" : "nav active"}>
           <div className="navContainer">
-            <Link className="active" to="/dashboard">Dashboard</Link>
-            <Link to="/profile">Profile</Link>
-            <div className="logoutContainer">
-              <button onClick={handleLogout}>Logout</button>
-            </div>
+            <Link className="active" to="/dashboard">Home</Link>
+            <Link to='/profile' style={{ background: "none", color: "white", fontSize: "24px"}}>
+              <FontAwesomeIcon icon={faCircleUser} />
+            </Link>
           </div>
         </nav>
       ) : (

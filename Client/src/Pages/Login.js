@@ -6,7 +6,7 @@ import { signInSuccess, signInFailure, signInStart } from "../features/userSlice
 import { useSelector, useDispatch } from "react-redux";
 import { faSignIn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Loader from "../Component/Loader";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ const Login = () => {
   
   },[])
 
-  const { isError, isLoading } = useSelector((state) => state.user);
+  const { isError } = useSelector((state) => state.user);
 
   const handleLogin = () => {
     // User must input in email and password

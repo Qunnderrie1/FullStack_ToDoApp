@@ -39,6 +39,8 @@ router.delete("/:id", protect, async (req, res) => {
     try {
       const deleteTask = await task.deleteOne({ _id: id });
       res.json(deleteTask);
+      console.log(deleteTask)
+      
     } catch (error) {
       console.log(error);
     }

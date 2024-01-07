@@ -41,9 +41,6 @@ const Dashboard = () => {
         setIsDisable(false)
     }
 
-    console.log(tasks)
-
-
 
   }, [tasks, isDisable]);
 
@@ -77,30 +74,17 @@ const Dashboard = () => {
       <div className="box1"></div>
       <div className="dashBoardContainer">
         <div className="taskContainer container">
-        <h1 className="headerText">Task <span>List</span></h1>
+        <h3 className="headerText">Hello,<span>{currentUser.username}</span></h3>
         <UserItems />
-          <div className="usertaskHeaderContainer">
 
-          <div className="profileButtonContainer">
-              {currentUser ? (
-                <button onClick={()=> navigate('/profile')}>
-                  Hello, {currentUser.username.toUpperCase()}
-                </button>
-              ) : (
-                <p>User</p>
-              )}
-            </div>
-       
-          </div>
-       
           <form onSubmit={handleSubmit}>
             <input
               onChange={(e) => setUserTask(e.target.value)}
               value={userTask}
               className="form-control"
               minLength="0"
-              maxLength="25"
-              placeholder="Create new todo"
+              maxLength="40"
+              placeholder="What's on the agenda for today?"
             />
             <button disabled={isDisable} className="addTaskBtn" onClick={handleAddTask}>
               Add
@@ -125,7 +109,7 @@ const Dashboard = () => {
               );
             })
           ) : (
-            <p style={{ textAlign: "center", margin: "20px 0px", fontStyle:"italic" }}>No Tasks</p>
+            <p style={{ textAlign: "center", margin: "20px 0px", fontStyle:"italic", color: "white" }}>No Tasks</p>
           )}
         </div>
       </div>
