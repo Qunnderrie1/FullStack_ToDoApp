@@ -57,6 +57,7 @@ const Login = () => {
 
   return (
     <div className="loginContainer container">
+      <h1 className="appLogoText">To-Do <span>List</span></h1>
       <div className="logoContainer">
         <FontAwesomeIcon icon={faSignIn} />
         <h1>Login</h1>

@@ -1,13 +1,20 @@
 import axios from "axios";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { profileDelete, signOut } from "../features/userSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+
 
 const Profile = () => {
   const { currentUser, tasks } = useSelector(
     (state) => state.user
   );
+  const [userName , setUserName] = useState("")
+  const [email , setEmail] = useState("")
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -42,20 +49,35 @@ const Profile = () => {
     }
   };
 
+
+
   return (
     <div className="profileContainer container">
       <div className="userInfoContainer">
-        <p style={{ marginTop: "100px", fontSize: "20px", fontWeight: "600" }}>
-          {currentUser.username.toUpperCase()}
-        </p>
-        <p style={{ margin: "20px 0px", fontSize: "16px", fontWeight: "400" }}>
-          Tasks: {tasks.length}
-        </p>
+        <FontAwesomeIcon icon={faUserCircle} className="userIcon" />
+
+        <div className="userContainer">
+          <div className="userInfo">
+          <label>Username</label>
+          <input className="form-control" type="text" onChange={(e) => setUserName(e.target.value)} value={currentUser.username} placeholder={currentUser.username} />
+          </div>
+          <div className="userInfo">
+          <label>Email Address</label>
+          <input className="form-control" type='email' onChange={(e) => setUserName(e.target.value)} value={currentUser.email} placeholder={currentUser.email}  />
+          </div>
+
+        </div>
+      
       </div>
+
 
       <div className="profileBtnContainer">
       <button className="deleteAccountBtn" onClick={handleDelete}>Delete Account</button>
       <button className="logoutBtn" onClick={handleLogout}>Logout</button>
+      </div>
+
+      <div className="profileBottom">
+      <p>Back to</p><Link className="homeBtn" to='/dashboard'>Home</Link>
 
       </div>
     

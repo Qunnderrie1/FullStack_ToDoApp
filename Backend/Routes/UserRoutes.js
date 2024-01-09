@@ -30,11 +30,12 @@ router.post("/login" , async (req, res, next) => {
     })
 
     res.json({
+      id: current._id,
       username: current.username,
       email: current.email,
 
-
     })
+
 
       }
     } catch (error) {
@@ -63,6 +64,9 @@ router.post("/logout", async (req, res) => {
 
   res.json({ message: "user logged out" });
 });
+
+
+
 
 // Delete user
 router.delete("/" , async (req, res) => {
@@ -129,7 +133,47 @@ res.end();
   
 });
 
-router.get("/" , (req , res) => {
+router.get("/", protect , async (req , res) => {
+
+
+  // // find the current user
+  // const current = await user.findOne({ email });
+
+  // if (current && (await bcrypt.compare(password, current.password))) {
+
+  //   try {
+
+  //     if (current) {
+  //      const userTask = await task.findOne({ user: current.id})
+  //      const token = generateToken(current._id)
+  //      res.cookie('token' , token, {
+  //      httpOnly: false,
+  //      secure: true,
+  //      sameSite: 'none',
+  //      maxAge: 1000 * 60 * 60 * 24
+  //   })
+
+  //   res.json({
+  //     id: current._id,
+  //     username: current.username,
+  //     email: current.email,
+
+  //   })
+
+
+  //     }
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // } else {
+  //   res.status(401).json({
+  //     message: "Invaild username or password.",
+  //   });
+  // }
+
+
+
+
 
 })
 

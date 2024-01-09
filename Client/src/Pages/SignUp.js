@@ -67,6 +67,8 @@ const SignUp = () => {
   return (
 
     <div className='siginContainer container'>
+        <h1 className="appLogoText">To-Do <span>List</span></h1>
+
         <h1>Sign Up</h1>
         <p>Create an account to start creating tasks</p>
         <form className='signUpForm' onSubmit={handleSubmit}>

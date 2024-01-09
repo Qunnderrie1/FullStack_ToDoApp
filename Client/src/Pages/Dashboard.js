@@ -11,11 +11,14 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [userTask, setUserTask] = useState("");
-  const [isDisable , setIsDisable] = useState(false)
+  const [isDisable , setIsDisable] = useState(false);
+
+
+
 
   const { tasks } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  
 
   const { currentUser } = useSelector((state) => state.user);
 
@@ -71,10 +74,9 @@ const Dashboard = () => {
 
   return (
     <div className="mainDashboard container">
-      <div className="box1"></div>
       <div className="dashBoardContainer">
         <div className="taskContainer container">
-        <h3 className="headerText">Hello,<span>{currentUser.username}</span></h3>
+        <h3 className="headerText">Hello,<span> {currentUser.username}</span></h3>
         <UserItems />
 
           <form onSubmit={handleSubmit}>
