@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "https://fullstacktodoapp-lqgy.onrender.com/",
+  "proxy": "https://fullstacktodoapp-lqgy.onrender.com/",
   "homepage": "https://fullstacktodoapp-lqgy.onrender.com/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -19,6 +19,7 @@
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
+    "taskapp": "file:..",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
