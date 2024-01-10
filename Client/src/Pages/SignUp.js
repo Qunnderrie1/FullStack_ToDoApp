@@ -74,7 +74,7 @@ const SignUp = () => {
         <form className='signUpForm' onSubmit={handleSubmit}>
             <input onChange={(e) => setUserName(e.target.value)} value={username}  className='form-control' type='text' minLength='0' maxLength="30" placeholder='username' />
             <input onChange={(e) => setEmail(e.target.value)} value={email} className='form-control' type='text' placeholder='email' />
-            <input onChange={(e) => setPassword(e.target.value)} value={password.trimEnd()}   className='form-control' type='password' minLength='0' maxLength="10" placeholder='password' />
+            <input onChange={(e) => setPassword(e.target.value)} value={password}   className='form-control' type='password' minLength='0' maxLength="10" placeholder='password' />
             <button onClick={handleSignUp}>Sign Up</button>
         </form>
         <div className='signUpBottomContainer'>

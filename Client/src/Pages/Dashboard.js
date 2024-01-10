@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import UserItems from "../Component/UserItems.js";
 import { getUserTasks } from "../features/userSlice.js";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -77,12 +78,12 @@ const Dashboard = () => {
     axios.delete(`/api/task/${id}`)
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
-
-
+      
       axios
       .get(`/api/task`)
       .then((res) => dispatch(getUserTasks(res.data)))
       .catch((err) => console.log(err));
+  
 
 
 
