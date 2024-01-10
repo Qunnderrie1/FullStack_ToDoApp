@@ -19,8 +19,8 @@ const Navbar = () => {
       {currentUser ? (
         <nav className={currentUser ? "nav container" : "nav active"}>
           <div className="navContainer">
-            <Link to='/profile' style={{ background: "none", color: "white", fontSize: "24px"}}>
-              Profile
+            <Link to='/profile' style={{ background: "none", color: "white", fontSize: "30px"}}>
+              <FontAwesomeIcon icon={faCircleUser} />
             </Link>
           </div>
         </nav>

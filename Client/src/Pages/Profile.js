@@ -54,7 +54,7 @@ const Profile = () => {
   return (
     <div className="profileContainer container">
       <div className="userInfoContainer">
-        <FontAwesomeIcon icon={faUserCircle} className="userIcon" />
+        <h3>{currentUser.username}</h3>
 
         <div className="userContainer">
           <div className="userInfo">

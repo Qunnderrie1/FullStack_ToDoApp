@@ -68,6 +68,7 @@ const Dashboard = () => {
     .catch((err) => console.log(err));
 
 
+
   };
 
   const handleDelete = (id) => {
@@ -82,7 +83,6 @@ const Dashboard = () => {
       .get(`/api/task`)
       .then((res) => dispatch(getUserTasks(res.data)))
       .catch((err) => console.log(err));
-  
 
 
 
