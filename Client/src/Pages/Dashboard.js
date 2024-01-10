@@ -49,7 +49,7 @@ const Dashboard = () => {
 
 
 
-  }, [tasks, isDisable]);
+  },[isDisable]);
 
   const handleAddTask = () => {
 
@@ -62,6 +62,11 @@ const Dashboard = () => {
         console.log("Please type in a value")
     }
 
+    axios
+    .get(`/api/task`)
+    .then((res) => dispatch(getUserTasks(res.data)))
+    .catch((err) => console.log(err));
+
 
   };
 
@@ -71,6 +76,14 @@ const Dashboard = () => {
     axios.delete(`/api/task/${id}`)
       .then(() => console.log("Task removed"))
       .catch((err) => console.log(err));
+
+
+      axios
+      .get(`/api/task`)
+      .then((res) => dispatch(getUserTasks(res.data)))
+      .catch((err) => console.log(err));
+  
+
 
 
   };
