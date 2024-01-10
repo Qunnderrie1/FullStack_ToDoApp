@@ -29,21 +29,13 @@ const Dashboard = () => {
 
   useEffect(() => {
 
-    const CancelToken = new axios.CancelToken();
-    const source = CancelToken.source();
 
     // Get tasks
     
     axios
-      .get(`/api/task`, { cancelToken : source()})
+      .get(`/api/task`)
       .then((res) => dispatch(getUserTasks(res.data)))
-      .catch((err) => {
-        if(axios.isCancel(err)){
-          console.log('Successfully aborted')
-        }else{
-          // handle error
-        }
-      });
+      .catch((err) => console.log(err));
 
 
 
@@ -54,12 +46,6 @@ const Dashboard = () => {
         setIsDisable(false)
     }
 
-
-    return () => {
-
-      source.cancel();
-     
-    }
 
 
 
