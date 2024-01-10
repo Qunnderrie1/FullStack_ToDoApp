@@ -49,7 +49,7 @@ const Dashboard = () => {
 
 
 
-  }, [isDisable]);
+  }, [tasks, isDisable]);
 
   const handleAddTask = () => {
 
