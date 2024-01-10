@@ -3,7 +3,6 @@ const {connectDB} = require("./Backend/DB/index")
 const taskRoute = require("./Backend/Routes/TaskRoutes")
 const userRoute = require("./Backend/Routes/UserRoutes")
 const cookieParser = require('cookie-parser');
-const { protect} = require("./Backend/MiddleWare/protectRoute")
 const cors = require('cors');
 require("dotenv").config();
 const path = require("path");

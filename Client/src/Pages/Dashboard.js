@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import UserItems from "../Component/UserItems.js";
 import { getUserTasks } from "../features/userSlice.js";
-import { useNavigate } from "react-router-dom";
 
 
 
 const Dashboard = () => {
   const [userTask, setUserTask] = useState("");
   const [isDisable , setIsDisable] = useState(false);
+
 
 
 
@@ -29,11 +29,21 @@ const Dashboard = () => {
 
   useEffect(() => {
 
+    const CancelToken = new axios.CancelToken();
+    const source = CancelToken.source();
+
     // Get tasks
+    
     axios
-      .get(`/api/task`)
+      .get(`/api/task`, { cancelToken : source()})
       .then((res) => dispatch(getUserTasks(res.data)))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if(axios.isCancel(err)){
+          console.log('Successfully aborted')
+        }else{
+          // handle error
+        }
+      });
 
 
 
@@ -43,6 +53,14 @@ const Dashboard = () => {
     }else{
         setIsDisable(false)
     }
+
+
+    return () => {
+
+      source.cancel();
+     
+    }
+
 
 
   }, [tasks, isDisable]);
@@ -74,9 +92,11 @@ const Dashboard = () => {
 
   return (
     <div className="mainDashboard container">
+      <h3>Welcome!</h3>
+    <h3 className="headerText"><span>{currentUser.username.toUpperCase()}</span></h3>
+
       <div className="dashBoardContainer">
         <div className="taskContainer container">
-        <h3 className="headerText">Hello,<span> {currentUser.username}</span></h3>
         <UserItems />
 
           <form onSubmit={handleSubmit}>

@@ -96,7 +96,7 @@ span{
 }
 
 .headerText{
-  text-align: start;
+  text-align: center;
   font-weight: 600;
   font-size: 1.3rem;
   color: white;
@@ -144,8 +144,8 @@ span{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 85vh;
   max-width: 400px;
-  margin-top: 100px;
 }
 .siginContainer h1 {
   margin-bottom: 40px;
@@ -407,12 +407,20 @@ i{
 @keyframes moveTask{
 
   0% {
-    transform: translateX(-100px);
+    transform: translateY(-50px);
     opacity: 0;
   }
 
+  50%{
+    transform: translateX(-25px);
+
+
+  }
+
+
+
   100%{
-    transform: translateX(0px);
+    transform: translateY(0px);
     opacity: 100%;
 
   }
